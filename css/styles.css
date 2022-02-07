@@ -1,0 +1,207 @@
+body {
+    font-family: "Kumbh Sans";
+    font-weight: 400;
+    font-size: 12px;
+    background: linear-gradient(
+        180deg,
+        hsl(273, 75%, 66%) 0%,
+        hsl(240, 73%, 65%) 100%
+    );
+}
+
+.faq {
+    width: calc(100% - 48px);
+    background-color: white;
+    margin: 148px auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 13px 13px -4px #56469f;
+}
+
+.faq-image-wrapper-desktop {
+    display: none;
+}
+
+.faq-image-wrapper-mobile {
+    position: relative;
+    padding-top: 138px;
+}
+
+.faq-image-wrapper-mobile img {
+    position: absolute;
+    width: 100%;
+    max-width: 238px;
+    height: auto;
+    left: 50%;
+    top: -112px;
+    transform: translateX(-50%);
+}
+
+.faq-image-wrapper-mobile .img-desktop {
+    display: none;
+}
+
+.faq-image-wrapper-mobile::after {
+    content: "";
+    display: block;
+    left: 50%;
+    top: 0;
+    width: 238px;
+    height: 100%;
+    position: absolute;
+    background-image: url("../images/bg-pattern-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+}
+
+.faq-content {
+    padding-left: 28px;
+    padding-right: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-content h1 {
+    margin-top: 0;
+    text-align: center;
+    font-weight: 700;
+    color: hsl(238, 29%, 16%);
+    margin-bottom: 42px;
+}
+
+.faq-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.faq-content ul li {
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.faq-content ul li:last-child {
+    margin-bottom: 0;
+}
+
+.faq-content ul li::after {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    background-image: url("../images/icon-arrow-down.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.faq-content .question {
+    margin-top: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: hsl(237, 12%, 33%);
+    user-select: none;
+}
+
+.faq-content .answer {
+    display: none;
+    color: hsl(240, 6%, 50%);
+    margin-bottom: 20px;
+}
+
+.faq-content ul li.active .question {
+    font-weight: 700;
+}
+
+.faq-content ul li.active .answer {
+    display: block;
+}
+
+.faq-content ul li.active::after {
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 921px) {
+    .faq {
+        max-width: 920px;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 128px auto;
+    }
+
+    .faq-image-wrapper-mobile {
+        display: none;
+    }
+
+    .faq-image-wrapper-desktop {
+        display: block;
+    }
+
+    .faq-content {
+        padding: 0;
+        margin-right: 90px;
+    }
+
+    .faq-content h1 {
+        width: 348px;
+        margin-top: 70px;
+        text-align: left;
+    }
+
+    .faq-content ul {
+        width: 348px;
+        margin-bottom: 80px;
+    }
+
+    .faq-content li .question:hover {
+        color: hsl(14, 88%, 65%);
+    }
+
+    .faq-image-wrapper-desktop {
+        position: relative;
+        width: 390px;
+    }
+
+    .faq-image-box {
+        position: absolute;
+        top: 59%;
+        left: 2px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .faq-image-wrapper-inner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .faq-image-wrapper-inner::after {
+        display: block;
+        content: "";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: -295px;
+        left: -392px;
+        background-image: url("../images/bg-pattern-desktop.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .img-desktop {
+        position: absolute;
+        left: -86px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
